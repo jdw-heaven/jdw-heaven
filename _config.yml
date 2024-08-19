@@ -10,13 +10,14 @@ description: | # 头像背后的信息（html格式），<br/>代表换行
   相信奇迹的人，本身就和奇迹一样了不起！
   <br/>
   谁终将声震人间，必长久深自缄默~
+url: "https://jdw-heaven.github.io" # 站点的url，末尾不要有'/'
 baseurl: "" # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/assets`前也要加，即`/your_baseurl/assets`。这一项结尾不要有'/'。
 
 defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/front-matter-defaults/>功能进行配置
   - scope:
       path: "" # an empty string here means all files in the project
     values: # 以下配置项也可以在任意页面自定义
-      jekyll-theme-WuK: # 我的主题的自定义样式都在这个命名空间
+      jekyll-theme-jdw_heaven: # 我的主题的自定义样式都在这个命名空间
         comments: # 留言页，请先修改这里，确保使用的是你自己的repo！参照<https://utteranc.es/>
           append: |
             <script
@@ -468,7 +469,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                 <script>
                 function initSakanaWidget() {
                   const mizuno = SakanaWidget.getCharacter('takina');
-                  mizuno.image = `https://mizuno-ai.wu-kan.cn/pixiv/75805052_p0.webp`;
+                  mizuno.image = `https://cdn.jsdelivr.net/gh/jdw-heaven/images01@main/pokemon-dange.webp`;
                   SakanaWidget.registerCharacter('mizuno', mizuno);
                   let sakana = document.createElement("div");
                   sakana.style.bottom = "0";
@@ -510,6 +511,19 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
             <br/>
             <i class="fa-solid fa-coffee fa-fw"></i>
             <a href="/merger/">如果这篇博客帮助到你，可以请我喝一杯咖啡~</a>
+        tags:
+          prepend: <i class="fas fa-tag"></i> # 在标签页的每个标签前面显示一个图标
+          count: true # 统计每个标签下文章的数量
+          plugin:
+            - smart_include:
+                enable: true
+                key: mermaid
+        archive:
+          posts_count:
+            enable: true # 博文数量统计
+            append: 篇博文。长路漫漫！ # 提示语
+          year_count: true
+          prepend: <i class="fas fa-folder-open"></i>
         merger: # 打赏页，需要配置！
           append_to_head:
             - | # 需要配置的变量见<https://merger.justhx.com/cn/docs/configure>
@@ -585,6 +599,11 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                 plugins: [ RevealMarkdown,RevealMath.KaTeX,Reveald3,RevealMermaid ]
               });
             "></script>
+        page404:
+          prepend:
+            - "Oops! This page seems to be missing."
+            - "Try searching for something else."
+            - "You can always go back to the homepage."
 
 compress_html: # <https://github.com/penibelst/jekyll-compress-html>
   clippings: all
@@ -606,7 +625,7 @@ plugins: # <https://jekyllrb.com/docs/plugins/>
   - jekyll-redirect-from # 站点页面重定向
   - jekyll-remote-theme # 使用remote_theme插件实现主题的前后分离，详见<https://github.com/benbalter/jekyll-remote-theme/>
 
-remote_theme: https://github.com/wu-kan/jekyll-theme-WuK@4.2.1 #使用固定版本号以防止主题更新导致站点显示错乱
+remote_theme: https://github.com/jdw-heaven/jekyll-theme-jdw_heaven@1.0.1 #使用固定版本号以防止主题更新导致站点显示错乱
 
 readme_index: # 缺失index.md和index.html时，使用README.md代替之
   with_frontmatter: true # 支持带有yaml头的README

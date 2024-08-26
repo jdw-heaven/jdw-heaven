@@ -332,23 +332,57 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
               </style>
             - | # 表格样式美化
               <style>
-                td,
-                th {
-                  padding: 0px;
-                  border: 0px;
-                }
                 table {
-                  border: 0px;
+                    margin: 0.8em 0;
+                    padding: 0;
+                    word-break: initial;
                 }
-                table tbody {
-                  display: block;
-                  overflow: scroll;
+
+                table tr {
+                    border-top: 1px solid #dfe2e5;
+                    margin: 0;
+                    padding: 0;
                 }
-                table thead,
-                tbody tr {
-                  display: table;
-                  table-layout: fixed;
-                  width: 100%;
+
+                /* 设置表头背景颜色为深灰色 */
+                table tr th {
+                    font-weight: bold;
+                    border: 1px solid #dfe2e5;
+                    border-bottom: 0;
+                    text-align: left;
+                    margin: 0;
+                    padding: 6px 13px;
+                    background-color: #A9A9A9; /* 深灰色 */
+                    color: #ffffff; /* 文字颜色设为白色以便对比 */
+                }
+
+                /* 设置偶数行背景颜色为浅灰色 */
+                table tr:nth-child(even) {
+                    background-color: #f2f2f2; /* 浅灰色 */
+                }
+
+                /* 设置奇数行背景颜色为深灰色 */
+                table tr:nth-child(odd) {
+                    background-color: #e0e0e0; /* 深灰色 */
+                }
+
+                table tr td {
+                    border: 1px solid #dfe2e5;
+                    text-align: left;
+                    margin: 0;
+                    padding: 6px 13px;
+                }
+
+                /* 清除第一个单元格的外边距 */
+                table tr th:first-child,
+                table tr td:first-child {
+                    margin-top: 0;
+                }
+
+                /* 清除最后一个单元格的外边距 */
+                table tr th:last-child,
+                table tr td:last-child {
+                    margin-bottom: 0;
                 }
               </style>
             - | # 列表项增加行距
@@ -357,10 +391,10 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                   margin: .25rem;
                 }
               </style>
-            - | # 首行缩进2字符
+            - | # 首行缩进0字符
               <style>
                 p {
-                  text-indent: 2rem;
+                  text-indent: 0rem;
                 }
                 p img {
                   max-width: calc(100% - 4rem);

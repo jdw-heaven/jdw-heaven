@@ -1,6 +1,6 @@
 # 天章
 
-- [我的简历](https://cdn.jsdelivr.net/gh/jdw-heaven/files01@main/Resume.pdf)
+- [我的简历](https://cdn.jsdelivr.net/gh/jdw-heaven/files01@main/Resume.pdf){:target="_blank"}
 
 <!-- .slide -->
 
